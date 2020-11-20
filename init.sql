@@ -1,0 +1,1 @@
+CREATE TABLE users (id serial PRIMARY KEY, first_name text, last_name text, username text, password text, email text, phone_number text);

@@ -1,0 +1,26 @@
+version: '3.4'
+
+services:
+  usersservice:
+    image: usersservice
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    depends_on:
+      - 'database'
+    environment:
+      NODE_ENV: production
+    ports:
+      - '8080:8080'
+
+  database:
+    image: postgres:latest
+    restart: always
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_DB=users_microservice
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
