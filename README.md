@@ -1,4 +1,4 @@
-Use `docker-compose up` to run the app if you clone this repo.
+If you clone this repo, use `docker-compose up` to run the app. 
 
 Otherwise, run the [Docker image](https://hub.docker.com/r/emilyhosoya/usersservice) with postgres:
 
