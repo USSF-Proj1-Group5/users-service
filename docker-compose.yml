@@ -1,8 +1,18 @@
 version: '3.4'
 
 services:
+  database:
+    image: postgres:alpine
+    restart: always
+    environment:
+      - POSTGRES_DB=users_microservice
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - '/var/lib/postgresql/data'
+
   usersservice:
-    image: usersservice
+    image: emilyhosoya/usersservice
     build:
       context: .
       dockerfile: ./Dockerfile
@@ -15,13 +25,6 @@ services:
       - '/app/node_modules'
     ports:
       - '8080:8080'
-
-  database:
-    image: postgres:13.1-alpine
-    restart: always
-    environment:
-      - POSTGRES_DB=users_microservice
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-    volumes:
-      - '/var/lib/postgresql/data'
+      
+volumes:
+  db_data: {}

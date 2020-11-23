@@ -8,11 +8,15 @@ const app = express();
 
 app.use(express.static(path));
 
-var corsOptions = {
-  origin: "http://localhost:8081"
-};
+// No longer needed:
+// var corsOptions = {
+//   origin: "http://localhost:8081"
+// };
+// app.use(cors(corsOptions));
 
-app.use(cors(corsOptions));
+app.use(cors())
+app.options('*', cors())
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
