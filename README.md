@@ -6,7 +6,7 @@ Run the [Docker image](https://hub.docker.com/r/emilyhosoya/usersservice) with p
 `docker network create mynet`
 
 * Run postgres:
-`docker run --net mynet --name mydb -v $(pwd)/datadir:/var/lib/postgresql/data -e POSTGRES_PASSWORD=postgres -d postgres:alpine`
+`docker run --net mynet --name database -v $(pwd)/datadir:/var/lib/postgresql/data -e POSTGRES_DB=users_microservice -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -d postgres:alpine`
 
 * Run the app:>
-`docker run --net mynet -ti -p 8080:8080 -v emilyhosoya/usersservice`
+`docker run --net mynet -ti -p 8080:8080 emilyhosoya/usersservice`
