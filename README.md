@@ -1,6 +1,6 @@
 If you clone this repo, use `docker-compose up` to run the app. 
 
-Otherwise, pull the [Docker image](https://hub.docker.com/r/emilyhosoya/usersservice). Run it with postgres using the following steps:
+Otherwise, pull the [image from Docker](https://hub.docker.com/r/emilyhosoya/usersservice) using `docker pull emilyhosoya/usersservice`. Run it with postgres using the following steps:
 
 1. Create a user-defined network to bridge the app and postgres:
 `docker network create mynet`
