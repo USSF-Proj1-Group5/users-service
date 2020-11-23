@@ -1,10 +1,18 @@
-Create a user-defined network to bridge the app and postgres:
+## Run a cloned repo
+If you clone this Github repo, use `docker-compose up` to run the app. 
+
+
+## Run the image from Docker Hub
+To run the app without cloning from Github, pull the image from the [Docker repo](https://hub.docker.com/r/emilyhosoya/usersservice). Run it with postgres using the following steps:
+
+1. Pull the image from Docker:
+`docker pull emilyhosoya/usersservice`
+
+2. Create a user-defined network to bridge the app and postgres:
 `docker network create mynet`
 
-Run postgres:
-`docker run --net mynet --name mydb -v $(pwd)/datadir:/var/lib/postgresql/data -e POSTGRES_PASSWORD=postgres -d postgres:13.1-alpine`
+3. Run postgres:
+`docker run --net mynet --name database $(pwd)/datadir:/var/lib/postgresql/data -e POSTGRES_DB=users_microservice -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -d postgres:alpine`
 
-Run the app:
-<!-- using -v doesn't work right now... need to learn about volumes!: -->
-<!-- `docker run --net mynet -ti -p 8080:8080 -v emilyhosoya/usersservice` --> 
+4. Run the app:
 `docker run --net mynet -ti -p 8080:8080 emilyhosoya/usersservice`
