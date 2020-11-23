@@ -1,6 +1,9 @@
-If you clone this repo, use `docker-compose up` to run the app. 
+## Run a cloned repo
+If you clone this Github repo, use `docker-compose up` to run the app. 
 
-Otherwise, pull the image from the [Docker repo](https://hub.docker.com/r/emilyhosoya/usersservice). Run it with postgres using the following steps:
+
+## Run the image from Docker Hub
+Pull the image from the [Docker repo](https://hub.docker.com/r/emilyhosoya/usersservice). Run it with postgres using the following steps:
 
 1. Pull the image from Docker:
 `docker pull emilyhosoya/usersservice`
