@@ -1,3 +1,6 @@
+# Use docker-compose up to run the app if you clone this repo:
+
+# This is to run the pulled image from Docker Hub. It doesn't work yet...
 Create a user-defined network to bridge the app and postgres:
 `docker network create mynet`
 
