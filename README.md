@@ -12,7 +12,7 @@ To run the app without cloning from Github, pull the image from the [Docker repo
 `docker network create mynet`
 
 3. Run postgres:
-`docker run --net mynet --name database $(pwd)/datadir:/var/lib/postgresql/data -e POSTGRES_DB=users_microservice -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -d postgres:alpine`
+`docker run --net mynet --name database -v usersservice:/var/lib/postgresql/data -e POSTGRES_DB=users_microservice -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -d postgres:alpine`
 
 4. Run the app:
 `docker run --net mynet -ti -p 8080:8080 emilyhosoya/usersservice`
