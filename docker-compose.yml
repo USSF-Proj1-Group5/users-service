@@ -12,7 +12,7 @@ services:
       - '/var/lib/postgresql/data'
 
   usersservice:
-    image: emilyhosoya/usersservice
+    image: usersservice
     build:
       context: .
       dockerfile: ./Dockerfile
@@ -27,4 +27,4 @@ services:
       - '8080:8080'
       
 volumes:
-  db_data: {}
+  usersservice: {}
