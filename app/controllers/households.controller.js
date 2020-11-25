@@ -1,12 +1,11 @@
 const db = require("../models");
-const UserTasks = db.userTasks;
+const Households = db.households;
 const Op = db.Sequelize.Op;
 
-// Retrieve all UserTasks from the database.
+// Retrieve all Households from the database.
 exports.findAll = (req, res) => {
 
-
-  UserTasks.findAll()
+  Households.findAll()
     .then(data => {
       res.send(data);
     })
@@ -18,11 +17,11 @@ exports.findAll = (req, res) => {
     });
 };
 
-// Find a single User's tasks
-exports.findTasks = (req, res) => {
+// Find a single User's households
+exports.findHouseholds = (req, res) => {
     const id = req.params.id;
   
-    UserTasks.findAll({
+    Households.findAll({
         where: {
             user_id: id
         }

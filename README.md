@@ -1,3 +1,9 @@
+# Users Service
+
+This microservice enables an administrator to add a new user to a PostgreSQL database, edit their user information, and delete a user. Capabilities under development include user login authentication and the ability to create and join a household with other users. 
+
+View database schema at [Draw.io](https://drive.google.com/file/d/1Xp1a-6lcj4_X7ro1sFDO6jp3UxP_sGrm/view?usp=sharing).
+
 ## Run a cloned repo
 If you clone this Github repo, use `docker-compose up` to run the app. 
 
